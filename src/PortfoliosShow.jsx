@@ -32,7 +32,7 @@ export function PortfoliosShow(props) {
         </form>
       </div>
       <div>
-        <button onClick={handleClick}>Delete Entry</button>
+        <button onClick={handleClick}>Delete Portfolio Entry</button>
       </div>
     </div>
   );

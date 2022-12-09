@@ -7,6 +7,7 @@ import { LogoutLink } from "./Logout";
 import { PortfoliosIndex } from "./PortfoliosIndex";
 import { PortfoliosShow } from "./PortfoliosShow";
 import { WoodshopsIndex } from "./WoodshopsIndex";
+import { WoodshopsShow } from "./WoodshopsShow";
 import { Modal } from "./Modal";
 
 export function Home() {
@@ -86,13 +87,54 @@ export function Home() {
     });
   };
 
+  const handleDestroyPortfolio = (portfolio) => {
+    axios.delete("http://localhost:3000/portfolios/" + portfolio.id, +".json").then((response) => {
+      setPortfolios(portfolios.filter((pf) => pf.id !== portfolio.id));
+      handleHidePortfolio();
+    });
+  };
+
   //Woodshop actions
   const [woodshops, setWoodshops] = useState([]);
-
+  const [isWoodshopShowVisable, setIsWoodshopShowVisable] = useState(false);
+  const [currentWoodshop, setCurrentWoodshop] = useState({});
   const handelIndexWoodshops = () => {
     axios.get("http://localhost:3000/woodshops.json").then((response) => {
       console.log(response.data);
       setWoodshops(response.data);
+    });
+  };
+
+  const handleShowWoodshop = (woodshop) => {
+    setIsWoodshopShowVisable(true);
+    setCurrentWoodshop(woodshop);
+  };
+
+  const handleHideWoodshop = () => {
+    setIsWoodshopShowVisable(false);
+  };
+
+  const handleUpdateWoodshop = (id, params) => {
+    axios.patch("http://localhost:3000/woodshops/" + id + ".json", params).then((response) => {
+      const updatedWoodshop = response.data;
+      setCurrentWoodshop(updatedWoodshop);
+
+      setWoodshops(
+        woodshops.map((woodshop) => {
+          if (woodshop.id === updatedWoodshop.id) {
+            return updatedWoodshop;
+          } else {
+            return woodshop;
+          }
+        })
+      );
+    });
+  };
+
+  const handleDestroyWoodshop = (woodshop) => {
+    axios.delete("http://localhost:3000/woodshops/" + woodshop.id, +".json").then((response) => {
+      setWoodshops(woodshops.filter((w) => w.id !== woodshop.id));
+      handleHideWoodshop();
     });
   };
 
@@ -111,9 +153,20 @@ export function Home() {
       </Modal>
       <PortfoliosIndex portfolios={portfolios} onSelectPortfolio={handleShowPortfolio} />
       <Modal show={isPortfolioShowVisable} onClose={handleHidePortfolio}>
-        <PortfoliosShow portfolio={currentPortfolio} onUpdatePortfolio={handleUpdatePortfolio} />
+        <PortfoliosShow
+          portfolio={currentPortfolio}
+          onUpdatePortfolio={handleUpdatePortfolio}
+          onDestroyPortfolio={handleDestroyPortfolio}
+        />
       </Modal>
-      <WoodshopsIndex woodshops={woodshops} />
+      <WoodshopsIndex woodshops={woodshops} onSelectWoodshop={handleShowWoodshop} />
+      <Modal show={isWoodshopShowVisable} onClose={handleHideWoodshop}>
+        <WoodshopsShow
+          woodshop={currentWoodshop}
+          onUpdateWoodshop={handleUpdateWoodshop}
+          onDestroyWoodshop={handleDestroyWoodshop}
+        />
+      </Modal>
     </div>
   );
 }

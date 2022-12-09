@@ -7,6 +7,15 @@ export function WoodshopsIndex(props) {
           <h2>{woodshop.item}</h2>
           <p>{woodshop.description}</p>
           <img src={woodshop.image_url} className="image" />
+          <p>
+            {localStorage.jwt === undefined ? (
+              <></>
+            ) : (
+              <>
+                <button onClick={() => props.onSelectWoodshop(woodshop)}>Edit Woodshop Entry</button>
+              </>
+            )}
+          </p>
         </div>
       ))}
     </div>
