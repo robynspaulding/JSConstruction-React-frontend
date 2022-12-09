@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { AboutsIndex } from "./AboutsIndex";
 import { Login } from "./Login";
+import { LogoutLink } from "./Logout";
 import { PortfoliosIndex } from "./PortfoliosIndex";
 import { WoodshopsIndex } from "./WoodshopsIndex";
 
@@ -39,6 +40,7 @@ export function Home() {
     <div>
       <h1>Jordan Spaulding Construction</h1>
       <Login />
+      <LogoutLink />
       <AboutsIndex abouts={abouts} />
       <PortfoliosIndex portfolios={portfolios} />
       <WoodshopsIndex woodshops={woodshops} />
