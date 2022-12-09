@@ -7,6 +7,15 @@ export function PortfoliosIndex(props) {
           <h2>{portfolio.job_name}</h2>
           <p>{portfolio.description}</p>
           <img src={portfolio.image_url} className="image" />
+          <p>
+            {localStorage.jwt === undefined ? (
+              <></>
+            ) : (
+              <>
+                <button onClick={() => props.onSelectPortfolio(portfolio)}>Edit Portfolio Entry</button>
+              </>
+            )}
+          </p>
         </div>
       ))}
     </div>

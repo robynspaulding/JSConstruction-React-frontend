@@ -5,6 +5,7 @@ import { AboutsShow } from "./AboutsShow";
 import { Login } from "./Login";
 import { LogoutLink } from "./Logout";
 import { PortfoliosIndex } from "./PortfoliosIndex";
+import { PortfoliosShow } from "./PortfoliosShow";
 import { WoodshopsIndex } from "./WoodshopsIndex";
 import { Modal } from "./Modal";
 
@@ -49,11 +50,39 @@ export function Home() {
 
   //Portfolio actions
   const [portfolios, setPortfolios] = useState([]);
+  const [isPortfolioShowVisable, setIsPortfolioShowVisable] = useState(false);
+  const [currentPortfolio, setCurrentPortfolio] = useState({});
 
   const handelIndexPortfolios = () => {
     axios.get("http://localhost:3000/portfolios.json").then((response) => {
       console.log(response.data);
       setPortfolios(response.data);
+    });
+  };
+
+  const handleShowPortfolio = (portfolio) => {
+    setIsPortfolioShowVisable(true);
+    setCurrentPortfolio(portfolio);
+  };
+
+  const handleHidePortfolio = () => {
+    setIsPortfolioShowVisable(false);
+  };
+
+  const handleUpdatePortfolio = (id, params) => {
+    axios.patch("http://localhost:3000/portfolios/" + id + ".json", params).then((response) => {
+      const updatedPortfolio = response.data;
+      setCurrentPortfolio(updatedPortfolio);
+
+      setPortfolios(
+        portfolios.map((portfolio) => {
+          if (portfolio.id === updatedPortfolio.id) {
+            return updatedPortfolio;
+          } else {
+            return portfolio;
+          }
+        })
+      );
     });
   };
 
@@ -80,7 +109,10 @@ export function Home() {
       <Modal show={isAboutShowVisable} onClose={handleHideAbout}>
         <AboutsShow about={currentAbout} onUpdateAbout={handleUpdateAbout} />
       </Modal>
-      <PortfoliosIndex portfolios={portfolios} />
+      <PortfoliosIndex portfolios={portfolios} onSelectPortfolio={handleShowPortfolio} />
+      <Modal show={isPortfolioShowVisable} onClose={handleHidePortfolio}>
+        <PortfoliosShow portfolio={currentPortfolio} onUpdatePortfolio={handleUpdatePortfolio} />
+      </Modal>
       <WoodshopsIndex woodshops={woodshops} />
     </div>
   );
