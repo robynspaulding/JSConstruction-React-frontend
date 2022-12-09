@@ -6,6 +6,9 @@ export function AboutsIndex(props) {
         <div key={about.id}>
           <h2>{about.summary}</h2>
           <img src={about.image_url} className="image" />
+          <p>
+            <button onClick={() => props.onSelectAbout(about)}>Edit About Entry</button>
+          </p>
         </div>
       ))}
     </div>
