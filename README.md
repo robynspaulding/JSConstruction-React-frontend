@@ -2,7 +2,7 @@
 React.js Frontend
 
 
-The goal for this front end is to the user interface for a construction website that will display the company's profiles/About section, protfolio and Woodshop inventory and allow for the owner to update each section as needed from the front end, as well as for costumers to contact the company to request services, quotes or purchase items. 
+The goal for this front end is to be the user interface for a construction website that will display the company's profiles/About section, protfolio and Woodshop inventory and allow for the owner to update each section as needed from the front end, as well as for costumers to contact the company to request services, quotes or purchase items. 
 
 # Technology used:
 - <a href="https://github.com/robynspaulding/JSConstruction-React-frontend">React.js frontend - This Repo!</a>
