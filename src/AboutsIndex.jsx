@@ -7,7 +7,13 @@ export function AboutsIndex(props) {
           <h2>{about.summary}</h2>
           <img src={about.image_url} className="image" />
           <p>
-            <button onClick={() => props.onSelectAbout(about)}>Edit About Entry</button>
+            {localStorage.jwt === undefined ? (
+              <></>
+            ) : (
+              <>
+                <button onClick={() => props.onSelectAbout(about)}>Edit About Entry</button>
+              </>
+            )}
           </p>
         </div>
       ))}

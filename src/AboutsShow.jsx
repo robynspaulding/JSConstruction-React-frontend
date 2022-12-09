@@ -27,6 +27,9 @@ export function AboutsShow(props) {
           <button type="submit">Update About Entry</button>
         </form>
       </div>
+      {/* <div>
+        <button onClick={handleClick}>Delete Entry</button>
+      </div> */}
     </div>
   );
 }

@@ -1,7 +1,7 @@
 export function WoodshopsIndex(props) {
   return (
     <div id="woodshops-index">
-      <h1> Woodshop </h1>
+      <h1>The Woodshop </h1>
       {props.woodshops.map((woodshop) => (
         <div key={woodshop.id}>
           <h2>{woodshop.item}</h2>
