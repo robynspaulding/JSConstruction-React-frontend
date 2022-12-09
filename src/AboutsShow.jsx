@@ -24,13 +24,8 @@ export function AboutsShow(props) {
           <div>
             Image: <input type="text" name="image_url" defaultValue={props.about.image_url} />
           </div>
-          <button className="btn btn-info" type="submit">
-            Update About Entry
-          </button>
+          <button type="submit">Update About Entry</button>
         </form>
-      </div>
-      <div>
-        <button onClick={handleClick}>Delete Entry</button>
       </div>
     </div>
   );
