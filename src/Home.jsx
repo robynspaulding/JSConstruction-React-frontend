@@ -4,11 +4,13 @@ import { AboutsIndex } from "./AboutsIndex";
 import { AboutsShow } from "./AboutsShow";
 import { Login } from "./Login";
 import { LogoutLink } from "./Logout";
+import { Modal } from "./Modal";
 import { PortfoliosIndex } from "./PortfoliosIndex";
 import { PortfoliosShow } from "./PortfoliosShow";
+import { PortfolioNew } from "./PortfolioNew";
 import { WoodshopsIndex } from "./WoodshopsIndex";
 import { WoodshopsShow } from "./WoodshopsShow";
-import { Modal } from "./Modal";
+import { WoodshopNew } from "./WoodshopNew";
 
 export function Home() {
   //About actions
@@ -147,10 +149,13 @@ export function Home() {
       <h1>Jordan Spaulding Construction</h1>
       <Login />
       <LogoutLink />
+
       <AboutsIndex abouts={abouts} onSelectAbout={handleShowAbout} />
       <Modal show={isAboutShowVisable} onClose={handleHideAbout}>
         <AboutsShow about={currentAbout} onUpdateAbout={handleUpdateAbout} />
       </Modal>
+
+      <PortfolioNew />
       <PortfoliosIndex portfolios={portfolios} onSelectPortfolio={handleShowPortfolio} />
       <Modal show={isPortfolioShowVisable} onClose={handleHidePortfolio}>
         <PortfoliosShow
@@ -159,6 +164,8 @@ export function Home() {
           onDestroyPortfolio={handleDestroyPortfolio}
         />
       </Modal>
+
+      <WoodshopNew />
       <WoodshopsIndex woodshops={woodshops} onSelectWoodshop={handleShowWoodshop} />
       <Modal show={isWoodshopShowVisable} onClose={handleHideWoodshop}>
         <WoodshopsShow
