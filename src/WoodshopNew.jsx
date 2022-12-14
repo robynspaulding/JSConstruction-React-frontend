@@ -18,19 +18,25 @@ export function WoodshopNew() {
 
   return (
     <div id="woodshop-new">
-      <form onSubmit={handleSubmit}>
-        <h1>Add an item to your Woodshop</h1>
-        <div>
-          Item Name <input type="text" name="item" />
-        </div>
-        <div>
-          Description <input type="text" name="description" />
-        </div>
-        <div>
-          Image URL <input type="text" name="image_url" />
-        </div>
-        <button type="submit">Add Entry to Woodshop</button>
-      </form>
+      {localStorage.jwt === undefined ? (
+        <></>
+      ) : (
+        <>
+          <form onSubmit={handleSubmit}>
+            <h1>Add an item to your Woodshop</h1>
+            <div>
+              Item Name <input type="text" name="item" />
+            </div>
+            <div>
+              Description <input type="text" name="description" />
+            </div>
+            <div>
+              Image URL <input type="text" name="image_url" />
+            </div>
+            <button type="submit">Add Entry to Woodshop</button>
+          </form>
+        </>
+      )}
     </div>
   );
 }
