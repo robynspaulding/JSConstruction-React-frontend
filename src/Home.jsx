@@ -147,15 +147,17 @@ export function Home() {
   return (
     <div>
       <h1>Jordan Spaulding Construction</h1>
+      {/* admin usage only */}
       <Login />
       <LogoutLink />
+      <WoodshopNew />
+      <PortfolioNew />
 
       <AboutsIndex abouts={abouts} onSelectAbout={handleShowAbout} />
       <Modal show={isAboutShowVisable} onClose={handleHideAbout}>
         <AboutsShow about={currentAbout} onUpdateAbout={handleUpdateAbout} />
       </Modal>
 
-      <PortfolioNew />
       <PortfoliosIndex portfolios={portfolios} onSelectPortfolio={handleShowPortfolio} />
       <Modal show={isPortfolioShowVisable} onClose={handleHidePortfolio}>
         <PortfoliosShow
@@ -165,7 +167,6 @@ export function Home() {
         />
       </Modal>
 
-      <WoodshopNew />
       <WoodshopsIndex woodshops={woodshops} onSelectWoodshop={handleShowWoodshop} />
       <Modal show={isWoodshopShowVisable} onClose={handleHideWoodshop}>
         <WoodshopsShow

@@ -17,7 +17,7 @@ export function WoodshopNew() {
   };
 
   return (
-    <div id="woodshop-new">
+    <div id="woodshop-new" className="new-entry">
       {localStorage.jwt === undefined ? (
         <></>
       ) : (

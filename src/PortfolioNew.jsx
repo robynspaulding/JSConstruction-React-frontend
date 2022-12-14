@@ -17,7 +17,7 @@ export function PortfolioNew() {
   };
 
   return (
-    <div id="portfolio-new">
+    <div id="portfolio-new" className="new-entry">
       {localStorage.jwt === undefined ? (
         <></>
       ) : (
