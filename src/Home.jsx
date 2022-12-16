@@ -11,6 +11,7 @@ import { PortfolioNew } from "./PortfolioNew";
 import { WoodshopsIndex } from "./WoodshopsIndex";
 import { WoodshopsShow } from "./WoodshopsShow";
 import { WoodshopNew } from "./WoodshopNew";
+import { Contact } from "./Contact";
 
 export function Home() {
   //About actions
@@ -175,6 +176,8 @@ export function Home() {
           onDestroyWoodshop={handleDestroyWoodshop}
         />
       </Modal>
+
+      <Contact />
     </div>
   );
 }

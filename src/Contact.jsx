@@ -1,0 +1,43 @@
+import { useRef } from "react";
+import emailjs from "@emailjs/browser";
+
+export function Contact() {
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", form.current, "YOUR_PUBLIC_KEY").then(
+      (result) => {
+        console.log(result.text);
+        console.log("message sent!");
+      },
+      (error) => {
+        console.log(error.text);
+      }
+    );
+  };
+
+  return (
+    <div>
+      <h1>Contact me for more information</h1>
+      <form ref={form} onSubmit={sendEmail}>
+        <div>
+          <label>Name</label>
+          <input type="text" name="user_name" />
+        </div>
+        <div>
+          <label>Email</label>
+          <input type="email" name="user_email" />
+        </div>
+        <div>
+          <label>Message</label>
+          <textarea name="message" />
+        </div>
+        <div>
+          <input type="submit" value="Send" />
+        </div>
+      </form>
+    </div>
+  );
+}
