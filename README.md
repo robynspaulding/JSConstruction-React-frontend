@@ -1,13 +1,14 @@
 # Jordan Spaulding Construction Website
+
 React.js Frontend
 
-
-This front end is the user interface for a construction website that will display the company's profiles/About section, protfolio and Woodshop inventory and allow for the owner to update each section as needed from the front end, as well as for costumers to contact the company to request services, quotes or purchase items. 
+This front end is the user interface for a construction website that will display the company's profiles/About section, protfolio and Woodshop inventory and allow for the owner to update each section as needed from the front end, as well as for costumers to contact the company to request services, quotes or purchase items.
 
 # Technology used:
+
 - <a href="https://github.com/robynspaulding/JSConstruction-React-frontend">React.js frontend - This Repo!</a>
 - <a href="https://github.com/robynspaulding/JSConstruction-API">Ruby on Rails backend </a>
-- More to come ...
+- EmailJS: JavaScript library that helps send emails using only client-side technologies
 
 ## Installation
 
