@@ -7,15 +7,23 @@ export function Contact() {
   const sendEmail = (e) => {
     e.preventDefault();
 
-    emailjs.sendForm("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", form.current, "YOUR_PUBLIC_KEY").then(
-      (result) => {
-        console.log(result.text);
-        console.log("message sent!");
-      },
-      (error) => {
-        console.log(error.text);
-      }
-    );
+    emailjs
+      .sendForm(
+        import.meta.env.VITE_APP_SERVICE_ID,
+        import.meta.env.VITE_APP_TEMPLATE_ID,
+        form.current,
+        import.meta.env.VITE_APP_PUBLIC_KEY
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          console.log("message sent!");
+        },
+        (error) => {
+          console.log(error.text);
+          console.log(process.env.REACT_APP_SERVICE_ID);
+        }
+      );
   };
 
   return (
@@ -23,11 +31,11 @@ export function Contact() {
       <h1>Contact me for more information</h1>
       <form ref={form} onSubmit={sendEmail}>
         <div>
-          <label>Name</label>
+          <label>Your Name</label>
           <input type="text" name="user_name" />
         </div>
         <div>
-          <label>Email</label>
+          <label>Your Email</label>
           <input type="email" name="user_email" />
         </div>
         <div>
