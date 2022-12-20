@@ -148,9 +148,9 @@ export function Home() {
   return (
     <div>
       <h1>Jordan Spaulding Construction</h1>
-      {/* admin usage only */}
-      <Login />
-      <LogoutLink />
+
+      <Contact />
+
       <WoodshopNew />
       <PortfolioNew />
 
@@ -176,8 +176,6 @@ export function Home() {
           onDestroyWoodshop={handleDestroyWoodshop}
         />
       </Modal>
-
-      <Contact />
     </div>
   );
 }
