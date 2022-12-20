@@ -31,15 +31,20 @@ export function Contact() {
       <h1>Contact me for more information</h1>
       <form ref={form} onSubmit={sendEmail}>
         <div>
-          <label>Your Name</label>
+          <label>Your Name: </label>
           <input type="text" name="user_name" />
         </div>
         <div>
-          <label>Your Email</label>
+          <label>Your Email: </label>
           <input type="email" name="user_email" />
         </div>
         <div>
-          <label>Message</label>
+          <label>Your Phone Number: </label>
+          <input type="text" name="user_phone" />
+        </div>
+        <div></div>
+        <div>
+          <label>Message: </label>
           <textarea name="message" />
         </div>
         <div>
