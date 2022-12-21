@@ -3,8 +3,13 @@ html {
 }
 
 .image {
-  width: 600px;
+  width: 400px;
   height: auto;
+  text-align: right;
+}
+
+.image-text {
+  text-align: center;
 }
 
 .new-entry  {

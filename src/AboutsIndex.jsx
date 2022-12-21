@@ -1,22 +1,39 @@
 export function AboutsIndex(props) {
   return (
-    <div id="abouts-index">
-      <h1> About </h1>
-      {props.abouts.map((about) => (
-        <div key={about.id}>
-          <h2>{about.summary}</h2>
-          <img src={about.image_url} className="image" />
-          <p>
-            {localStorage.jwt === undefined ? (
-              <></>
-            ) : (
-              <>
-                <button onClick={() => props.onSelectAbout(about)}>Edit About Entry</button>
-              </>
-            )}
-          </p>
+    <section id="abouts-index" class="about">
+      <div class="container" data-aos="fade-up">
+        <div class="section-title">
+          <h2>About</h2>
+          <p>Liscense Number 1016057 </p>
         </div>
-      ))}
-    </div>
+
+        <div class="row content">
+          <div class="col-lg-6">
+            {props.abouts.map((about) => (
+              <div key={about.id}>
+                <p>{about.summary}</p>
+                <p>
+                  {localStorage.jwt === undefined ? (
+                    <></>
+                  ) : (
+                    <>
+                      <button onClick={() => props.onSelectAbout(about)}>Edit About Entry</button>
+                    </>
+                  )}
+                </p>
+              </div>
+            ))}
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0">
+            {props.abouts.map((about) => (
+              <div key={about.id}>
+                <img src={about.image_url} className="image" />
+                <p className="image-text">Jordan Spaulding</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
   );
 }
