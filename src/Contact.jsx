@@ -27,7 +27,7 @@ export function Contact() {
   };
 
   return (
-    <div>
+    <div id="contact-form">
       <h1>Contact me for more information</h1>
       <form ref={form} onSubmit={sendEmail}>
         <div>
