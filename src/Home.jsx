@@ -2,8 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { AboutsIndex } from "./AboutsIndex";
 import { AboutsShow } from "./AboutsShow";
-import { Login } from "./Login";
-import { LogoutLink } from "./Logout";
+import { Footer } from "./Footer";
 import { Modal } from "./Modal";
 import { PortfoliosIndex } from "./PortfoliosIndex";
 import { PortfoliosShow } from "./PortfoliosShow";
@@ -147,18 +146,14 @@ export function Home() {
 
   return (
     <div>
-      <h1>Jordan Spaulding Construction</h1>
-
-      <Contact />
-
-      <WoodshopNew />
-      <PortfolioNew />
-
       <AboutsIndex abouts={abouts} onSelectAbout={handleShowAbout} />
       <Modal show={isAboutShowVisable} onClose={handleHideAbout}>
         <AboutsShow about={currentAbout} onUpdateAbout={handleUpdateAbout} />
       </Modal>
 
+      <Contact />
+
+      <PortfolioNew />
       <PortfoliosIndex portfolios={portfolios} onSelectPortfolio={handleShowPortfolio} />
       <Modal show={isPortfolioShowVisable} onClose={handleHidePortfolio}>
         <PortfoliosShow
@@ -168,6 +163,7 @@ export function Home() {
         />
       </Modal>
 
+      <WoodshopNew />
       <WoodshopsIndex woodshops={woodshops} onSelectWoodshop={handleShowWoodshop} />
       <Modal show={isWoodshopShowVisable} onClose={handleHideWoodshop}>
         <WoodshopsShow
@@ -176,6 +172,8 @@ export function Home() {
           onDestroyWoodshop={handleDestroyWoodshop}
         />
       </Modal>
+
+      <Footer />
     </div>
   );
 }

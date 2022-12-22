@@ -9,7 +9,7 @@ export function LogoutLink() {
   };
 
   return (
-    <a href="#" onClick={handleClick}>
+    <a href="#" class="getstarted scrollto" onClick={handleClick}>
       Logout
     </a>
   );

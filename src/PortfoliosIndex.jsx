@@ -1,11 +1,10 @@
 export function PortfoliosIndex(props) {
   return (
-    <div id="portfolios-index">
-      <h1> Portfolio / Jobs </h1>
-
+    <div id="portfolios-index" className="index">
+      {" "}
       <div class="container" data-aos="fade-up">
         <div class="section-title">
-          <h2>Testimonials</h2>
+          <h2>Portfolio / Jobs</h2>
           {props.portfolios.map((portfolio) => (
             <div key={portfolio.id}>
               <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
@@ -14,6 +13,7 @@ export function PortfoliosIndex(props) {
                     <div class="testimonial-item">
                       <p>
                         <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+
                         <h2>{portfolio.job_name}</h2>
 
                         <i class="bx bxs-quote-alt-right quote-icon-right"></i>
@@ -25,7 +25,9 @@ export function PortfoliosIndex(props) {
                           <></>
                         ) : (
                           <>
-                            <button onClick={() => props.onSelectPortfolio(portfolio)}>Admin Edit</button>
+                            <button className="edit-button" onClick={() => props.onSelectPortfolio(portfolio)}>
+                              Edit {portfolio.job_name}
+                            </button>
                           </>
                         )}
                       </p>

@@ -13,6 +13,34 @@ html {
 }
 
 .new-entry  {
-  background-color: rgb(199, 199, 199);
-  
+  background-color: rgba(186, 215, 246, 0.867);
+}
+
+.edit-button {
+  background-color: rgb(5, 112, 174);
+  color:white;
+  align-content: center;
+}
+
+.add-button {
+  background-color: white;
+}
+
+.delete-button {
+  background-color: rgb(189, 27, 27);
+}
+
+.contact-form {
+  padding: 200px;
+  align-content: center;
+}
+
+.index {
+  padding-top: 200px;
+}
+
+.login {
+  padding-left: 550px;
+  padding-top: 100px;
+
 }

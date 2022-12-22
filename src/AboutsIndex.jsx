@@ -4,6 +4,7 @@ export function AboutsIndex(props) {
       <div class="container" data-aos="fade-up">
         <div class="section-title">
           <h2>About</h2>
+          <h4>Owner/Operator Jordan Spaulding</h4>
           <p>Liscense Number 1016057 </p>
         </div>
 
@@ -17,7 +18,9 @@ export function AboutsIndex(props) {
                     <></>
                   ) : (
                     <>
-                      <button onClick={() => props.onSelectAbout(about)}>Edit About Entry</button>
+                      <button className="edit-button" onClick={() => props.onSelectAbout(about)}>
+                        Edit About Entry
+                      </button>
                     </>
                   )}
                 </p>

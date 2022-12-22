@@ -5,7 +5,7 @@ export function PortfolioNew() {
     axios.post("http://localhost:3000/portfolios.json", params).then((response) => {
       const newPortfolio = response.data;
       console.log("New Portfolio entry added", newPortfolio);
-      window.location.href = "/index";
+      window.location.href = "#portfolios-index";
     });
   };
 
@@ -25,15 +25,17 @@ export function PortfolioNew() {
           <form onSubmit={handleSubmit}>
             <h1>Add a job to your Portfolio</h1>
             <div>
-              Job Name <input type="text" name="job_name" />
+              Job Name <input type="text" name="job_name" required />
             </div>
             <div>
-              Description <input type="text" name="description" />
+              Description <input type="text" name="description" required />
             </div>
             <div>
               Image URL <input type="text" name="image_url" />
             </div>
-            <button type="submit">Add Entry to Portfolio</button>
+            <button class="add-button" type="submit">
+              Add Entry to Portfolio
+            </button>
           </form>
         </>
       )}

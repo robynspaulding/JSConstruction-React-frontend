@@ -28,7 +28,7 @@ export function Contact() {
   };
 
   return (
-    <div id="contact-form" class="contact-form">
+    <div id="contact-form" className="contact-form">
       <div class="container" data-aos="fade-up">
         <div class="section-title">
           <h1>Contact</h1>
@@ -38,9 +38,9 @@ export function Contact() {
           </p>
         </div>
 
-        <div class="col-lg-8 mt-5 mt-lg-0">
-          <form ref={form} onSubmit={sendEmail}>
-            <div class="row gy-2 gx-md-3">
+        <div class="col-lg-14 mt-5 mt-lg-0">
+          <form ref={form} onSubmit={sendEmail} className="form">
+            <div class="row gy-2 gx-md-2">
               <div class="col-md-6 form-group">
                 <input type="text" name="user_name" class="form-control" placeholder="Your Name" required />
               </div>

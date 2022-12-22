@@ -5,7 +5,7 @@ export function WoodshopNew() {
     axios.post("http://localhost:3000/woodshops.json", params).then((response) => {
       const newWoodshop = response.data;
       console.log("New Woodshop entry added", newWoodshop);
-      window.location.href = "/index";
+      window.location.href = "#woodshops-index";
     });
   };
 
@@ -25,15 +25,17 @@ export function WoodshopNew() {
           <form onSubmit={handleSubmit}>
             <h1>Add an item to your Woodshop</h1>
             <div>
-              Item Name <input type="text" name="item" />
+              Item Name <input type="text" name="item" required />
             </div>
             <div>
-              Description <input type="text" name="description" />
+              Description <input type="text" name="description" required />
             </div>
             <div>
-              Image URL <input type="text" name="image_url" />
+              Image URL <input type="text" name="image_url" required />
             </div>
-            <button type="submit">Add Entry to Woodshop</button>
+            <button class="add-button" type="submit">
+              Add Entry to Woodshop
+            </button>
           </form>
         </>
       )}
