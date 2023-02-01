@@ -29,5 +29,4 @@ You can view the app on http://localhost:5173.
 
 ## Future Plans
 
-- I’m still working on is the contact form for costumers
-- Styling to have a more polished and professional look.
+-Hosting live
