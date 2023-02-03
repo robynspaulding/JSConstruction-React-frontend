@@ -29,4 +29,4 @@ You can view the app on http://localhost:5173.
 
 ## Future Plans
 
--Hosting live
+- host page through Vercel 
