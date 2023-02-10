@@ -25,7 +25,11 @@ export function PortfoliosIndex(props) {
                           <></>
                         ) : (
                           <>
-                            <button className="edit-button" onClick={() => props.onSelectPortfolio(portfolio)}>
+                            <button
+                              class="btn btn-outline-dark"
+                              // className="edit-button"
+                              onClick={() => props.onSelectPortfolio(portfolio)}
+                            >
                               Edit {portfolio.job_name}
                             </button>
                           </>

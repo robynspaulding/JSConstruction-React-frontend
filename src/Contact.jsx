@@ -57,7 +57,7 @@ export function Contact() {
                 <textarea name="message" class="form-control" rows="5" placeholder="Message" required></textarea>
               </div>
               <div class="text-center col-12">
-                <input type="submit" value="Send Message" />
+                <input class="btn btn-outline-dark" type="submit" value="Send Message" />
               </div>
             </div>
           </form>

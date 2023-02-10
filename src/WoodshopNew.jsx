@@ -45,7 +45,11 @@ export function WoodshopNew() {
                   </div>
                 </div>
 
-                <button class="add-button" type="submit">
+                <button
+                  class="btn btn-outline-dark"
+                  // className="add-button"
+                  type="submit"
+                >
                   Add Item
                 </button>
               </form>

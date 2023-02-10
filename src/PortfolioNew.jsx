@@ -35,7 +35,8 @@ export function PortfolioNew() {
               <div>
                 Image URL <input type="text" name="image_url" />
               </div>
-              <button class="add-button" type="submit">
+              <p></p>
+              <button class="btn btn-outline-dark" type="submit">
                 Add Entry to Portfolio
               </button>
             </form>

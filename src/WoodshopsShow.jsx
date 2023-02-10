@@ -28,11 +28,17 @@ export function WoodshopsShow(props) {
           <div>
             Image: <input type="text" name="image_url" defaultValue={props.woodshop.image_url} />
           </div>
-          <button type="submit">Update woodshop Entry</button>
+          <p></p>
+          <button class="btn btn-outline-dark" type="submit">
+            Update woodshop Entry
+          </button>
         </form>
       </div>
+      <p></p>
       <div>
-        <button onClick={handleClick}>Delete Item Entry</button>
+        <button class="btn btn-outline-danger" onClick={handleClick}>
+          Delete Item Entry
+        </button>
       </div>
     </div>
   );

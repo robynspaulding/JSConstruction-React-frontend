@@ -18,7 +18,11 @@ export function AboutsIndex(props) {
                     <></>
                   ) : (
                     <>
-                      <button className="edit-button" onClick={() => props.onSelectAbout(about)}>
+                      <button
+                        class="btn btn-outline-dark"
+                        // className="edit-button"
+                        onClick={() => props.onSelectAbout(about)}
+                      >
                         Edit About Entry
                       </button>
                     </>

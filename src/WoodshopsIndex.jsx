@@ -23,7 +23,11 @@ export function WoodshopsIndex(props) {
                   <></>
                 ) : (
                   <>
-                    <button className="edit-button" onClick={() => props.onSelectWoodshop(woodshop)}>
+                    <button
+                      class="btn btn-outline-dark"
+                      // className="edit-button"
+                      onClick={() => props.onSelectWoodshop(woodshop)}
+                    >
                       Edit {woodshop.item}
                     </button>
                   </>

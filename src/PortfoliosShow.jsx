@@ -28,11 +28,17 @@ export function PortfoliosShow(props) {
           <div>
             Image: <input type="text" name="image_url" defaultValue={props.portfolio.image_url} />
           </div>
-          <button type="submit">Update portfolio Entry</button>
+          <p></p>
+          <button class="btn btn-outline-dark" type="submit">
+            Update portfolio Entry
+          </button>
         </form>
       </div>
+      <p></p>
       <div>
-        <button onClick={handleClick}>Delete Portfolio Entry</button>
+        <button class="btn btn-outline-danger" onClick={handleClick}>
+          Delete Portfolio Entry
+        </button>
       </div>
     </div>
   );
