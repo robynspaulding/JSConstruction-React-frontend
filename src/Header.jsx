@@ -1,8 +1,24 @@
 import { LogoutLink } from "./Logout";
+import { Signup } from "./Signup";
+import { useState } from "react";
+import { Modal } from "./Modal";
 
 export function Header() {
+  const [isSignupVisible, setIsSignupVisible] = useState(false);
+
+  const handleSignupShow = () => {
+    setIsSignupVisible(true);
+  };
+
+  const handleSignupClose = () => {
+    setIsSignupVisible(false);
+  };
+
   return (
     <header id="header" class="fixed-top">
+      <Modal show={isSignupVisible} onClose={handleSignupClose}>
+        <Signup onSignupClose={handleSignupClose} />
+      </Modal>
       <div class="container d-flex align-items-center justify-content-between">
         <h1 class="logo">
           <a href="/">Jordan Spaulding Construction</a>
@@ -37,6 +53,10 @@ export function Header() {
                   <a class="nav-link scrollto" href="/login">
                     {" "}
                     Admin Login{" "}
+                  </a>
+                  <a class="nav-link scrollto" href="#" onClick={handleSignupShow}>
+                    {" "}
+                    Sign Up{" "}
                   </a>
                 </>
               ) : (
