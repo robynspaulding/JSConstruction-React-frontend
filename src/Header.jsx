@@ -52,7 +52,7 @@ export function Header() {
                 <>
                   <a class="nav-link scrollto" href="/login">
                     {" "}
-                    Admin Login{" "}
+                    Login{" "}
                   </a>
                   <a class="nav-link scrollto" href="#" onClick={handleSignupShow}>
                     {" "}
