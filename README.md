@@ -10,7 +10,11 @@ This front end is the user interface for a construction website that will displa
 - <a href="https://github.com/robynspaulding/JSConstruction-API">Ruby on Rails backend </a>
 - EmailJS: JavaScript library that helps send emails using only client-side technologies
 
-## Installation
+## Installation & Dependencies
+- @emailjs/browser: ^3.10.0,
+- axios: ^1.2.1,
+- react: ^18.2.0,
+- react-dom: ^18.2.0
 
 ```bash
 git clone https://github.com/robynspaulding/JSConstruction-React-frontend.git
