@@ -2,7 +2,9 @@
 
 React.js Frontend
 
-This front end is the user interface for a construction website that will display the company's profiles/About section, protfolio and Woodshop inventory and allow for the owner to update each section as needed from the front end, as well as for costumers to contact the company to request services, quotes or purchase items.
+This front end is the user interface for a construction website that will display the company's profiles/About section, protfolio and Woodshop inventory and allow for the owner to login in and access the create, update and destroy actions for each section as needed from the front end, as well as for costumers to contact the company to request services, quotes or purchase items.
+
+<img src="src/images/JSCLoggedInView.png" width="500" height="500"/> <img src="src/images/JCSAbout.png" width="500" height="500"/>
 
 # Technology used:
 
